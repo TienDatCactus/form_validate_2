@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Palanquin+Dark:wght@400;500;600;700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link rel="stylesheet" href="main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-container">
+        <div class="form-header">
+          <div class="logo"><ion-icon name="logo-apple-ar"></ion-icon></div>
+          <h3>Sign up with us today</h3>
+          <p>Enter your email and choose a password to set up your account</p>
+        </div>
+        <form action="" method="post" id="form-1">
+          <div class="input name-input">
+            <input
+              type="text"
+              name="name"
+              class="name"
+              placeholder="full name"
+              rules="required"
+            />
+            <span class="form-msg"></span>
+          </div>
+          <!-- <div class="input gender-input">
+            <div class="gender-box">
+              <input type="radio" name="gender" value="male" />
+              <label for="male">Male</label>
+            </div>
+            <div class="gender-box">
+              <input type="radio" name="gender" value="female" />
+              <label for="male">Female</label>
+            </div>
+            <span class="form-msg"></span>
+          </div> -->
+          <!-- <div class="input address-input">
+            <select name="address" class="address-select">
+              <option value="">-- select an address --</option>
+              <option value="1">Viet Nam</option>
+              <option value="2">ThaiLand</option>
+              <option value="3">USA</option>
+            </select>
+            <span class="form-msg"></span>
+          </div> -->
+          <!-- <div class="input avatar-input">
+            <label for="file-upload" class="custom-file-upload"
+              >upload your avatar</label
+            >
+            <input type="file" id="file-upload" name="avatar" />
+            <span class="form-msg"></span>
+          </div> -->
+          <div class="input email-input">
+            <input
+              type="text"
+              name="email"
+              class="email"
+              placeholder="email address"
+              rules="required|email"
+            /><span class="form-msg"></span>
+          </div>
+          <div class="input password-input">
+            <input
+              type="password"
+              name="password"
+              class="password"
+              placeholder="enter password"
+              rules="required|min:6"
+            /><span class="form-msg"></span>
+          </div>
+          <!-- <div class="input re-enter-password-input">
+            <input
+              type="password"
+              name="re-password"
+              class="re-password"
+              placeholder="re-enter password"
+              rules="required|min:6"
+            /><span class="form-msg"></span>
+          </div> -->
+          <div class="configs">
+            <div class="gay-input">
+              <input type="checkbox" class="gaycheck" />
+              <span>gay ?</span>
+              <span class="form-msg"></span>
+            </div>
+            <div class="forgot-input">
+              <a href="!" class="forgot-pw">Forgot password</a>
+            </div>
+          </div>
+          <div class="btn submit-btn">
+            <input type="submit" value="Sign Up" />
+          </div>
+        </form>
+        <div class="continue-api">
+          <div class="with-google">
+            <p>Continue with Google</p>
+            <div class="icon"><ion-icon name="logo-google"></ion-icon></div>
+          </div>
+          <div class="with-apple">
+            <p>Continue with Apple</p>
+            <div class="icon"><ion-icon name="logo-apple"></ion-icon></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../valid.js"></script>
+    <script>
+      // when buidling a library out of scratch
+      // remember to have desire / hope / results for it
+      validator('#form-1',{
+        onSubmit : function(data){
+          console.log(data)
+        }
+      })
+    </script>
+  </body>
+</html>

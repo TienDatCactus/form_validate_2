@@ -1,0 +1,296 @@
+* {
+  font-family: "Roboto Mono", monospace;
+  color: #ffff;
+}
+body {
+  background-color: rgb(27, 26, 31);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  background-color: rgb(38, 37, 42);
+  border-radius: 20px;
+  width: 550px;
+  height: 100%;
+}
+
+.form-container {
+  padding: 20px;
+}
+.form-header {
+  text-align: center;
+}
+.form-header > .logo {
+  font-size: 50px;
+  margin: 20px 0;
+}
+.form-header > h3 {
+  font-size: 26px;
+  margin: 0;
+}
+.form-header > p {
+  font-size: 14px;
+  color: #ccc;
+  padding-bottom: 20px;
+}
+::placeholder {
+  color: #9d9d9d;
+}
+::-ms-reveal {
+  filter: invert(100%);
+}
+.input > input {
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 6px 0;
+  border: none;
+  height: 60px;
+  width: 100%;
+  background-color: rgb(30, 29, 34);
+  color: #ffff;
+  caret-color: rgb(113, 77, 201);
+}
+.input > input:focus {
+  border: 1px solid rgb(113, 77, 201);
+  background-color: rgb(43, 37, 63);
+  outline: none;
+}
+
+.configs {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+.gay-input {
+  display: flex;
+  align-items: center;
+}
+.gay-input > span {
+  color: #ccc;
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+.gaycheck {
+  width: 15px;
+  height: 15px;
+  background-color: rgb(30, 29, 34);
+}
+.gay-input .gaycheck {
+  appearance: none;
+  background-color: #dfe1e4;
+  border-radius: 72px;
+  border-style: none;
+  flex-shrink: 0;
+  height: 20px;
+  margin: 0;
+  position: relative;
+  width: 30px;
+}
+
+.forgot-input > a {
+  text-decoration: none;
+  color: rgb(101, 70, 177);
+}
+.gay-input .gaycheck::before {
+  bottom: -6px;
+  content: "";
+  left: -6px;
+  position: absolute;
+  right: -6px;
+  top: -6px;
+  cursor: pointer;
+}
+
+.gay-input .gaycheck,
+.gay-input .gaycheck::after {
+  transition: all 100ms ease-out;
+}
+
+.gay-input .gaycheck::after {
+  background-color: #fff;
+  border-radius: 50%;
+  content: "";
+  height: 14px;
+  left: 3px;
+  position: absolute;
+  top: 3px;
+  width: 14px;
+  cursor: pointer;
+}
+
+.gay-input input[type="checkbox"] {
+  cursor: default;
+}
+
+.gay-input .gaycheck:hover {
+  background-color: #c9cbcd;
+  transition-duration: 0s;
+}
+
+.gay-input .gaycheck:checked {
+  background-color: rgb(101, 70, 177);
+}
+
+.gay-input .gaycheck:checked::after {
+  background-color: #fff;
+  left: 13px;
+}
+
+.gay-input:focus:not(.focus-visible) {
+  outline: 0;
+}
+
+.gay-input .gaycheck:checked:hover {
+  background-color: rgb(117, 82, 207);
+}
+
+.btn > input {
+  width: 100%;
+  height: 60px;
+  font-size: 20px;
+  border-radius: 12px;
+  border: none;
+  background-color: rgb(117, 82, 207);
+  cursor: pointer;
+  color: #ccc;
+}
+.btn > input:hover {
+  background-color: rgb(131, 91, 233);
+  color: #ffffff;
+}
+
+.continue-api > .with-google {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  font-size: 20px;
+  border-radius: 12px;
+  border: none;
+  background-color: rgb(30, 29, 34);
+  cursor: pointer;
+  color: #ccc;
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+.continue-api > .with-google > .icon {
+  position: relative;
+  left: 120px;
+  top: 4px;
+  font-size: 30px;
+}
+
+.continue-api > .with-apple {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 60px;
+  font-size: 20px;
+  border-radius: 12px;
+  border: none;
+  background-color: rgb(30, 29, 34);
+  cursor: pointer;
+  color: #ccc;
+  margin: 20px 0;
+  align-items: center;
+  font-size: 18px;
+}
+.continue-api > .with-apple > .icon {
+  position: relative;
+  left: 120px;
+  top: 4px;
+  font-size: 30px;
+}
+
+.form-msg {
+  font-size: 12px;
+  color: #c63c3c;
+}
+
+.invalid > input {
+  border: 1px solid rgb(185, 11, 11);
+  background-color: rgb(57, 30, 30);
+  caret-color: rgb(198, 18, 18);
+}
+
+.invalid > input:focus {
+  border: 1px solid rgb(185, 11, 11);
+  background-color: hsl(0, 30%, 14%);
+  outline: none;
+}
+
+.gender-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+}
+
+.gender-box > label {
+  color: #ccc;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.address-input > .address-select {
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 6px 0;
+  border: none;
+  height: 60px;
+  width: 100%;
+  background-color: rgb(30, 29, 34);
+  color: #ffff;
+  caret-color: rgb(113, 77, 201);
+}
+
+.address-input > .address-select > option {
+  color: #ccc;
+}
+
+.address-input > .address-select:focus {
+  border: 1px solid rgb(113, 77, 201);
+  background-color: rgb(43, 37, 63);
+  outline: none;
+}
+
+.invalid > .address-select {
+  border: 1px solid rgb(185, 11, 11);
+  background-color: rgb(57, 30, 30);
+}
+
+
+input[type="file"] {
+  display: none;
+}
+
+.input.avatar-input{
+  margin: 25px 0 ;
+}
+.custom-file-upload {
+  padding: 20px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+  border: none;
+  background-color: rgb(30, 29, 34);
+  cursor: pointer;
+  color: #ccc;
+}
+.custom-file-upload:hover{
+  border: 1px solid rgb(113, 77, 201);
+  color: #fff
+}
+
+.invalid > .custom-file-upload {
+  border: 1px solid rgb(185, 11, 11);
+  background-color: rgb(57, 30, 30);
+}
