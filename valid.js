@@ -1,4 +1,6 @@
-function validator(formSelector, options = {}) {
+function validator(formSelector) {
+  // call this from out side declared fnction
+  var _this = this;
   function getParent(element, selector) {
     while (element.parentElement) {
       if (element.parentElement.matches(selector)) {
@@ -73,10 +75,11 @@ function validator(formSelector, options = {}) {
     function handleValidation(event) {
       var rules = formRules[event.target.name];
       var errors;
-      rules.some(function (rule) {
+
+      for (var rule of rules) {
         errors = rule(event.target.value);
-        return errors;
-      });
+        if (errors) break;
+      }
 
       if (errors) {
         var errorParent = getParent(event.target, ".input");
@@ -105,6 +108,7 @@ function validator(formSelector, options = {}) {
 
   form.onsubmit = function (event) {
     event.preventDefault();
+
     var formValid = true;
     var inputElements = form.querySelectorAll("[name][rules]");
     for (var input of inputElements) {
@@ -118,13 +122,13 @@ function validator(formSelector, options = {}) {
     }
 
     if (formValid) {
-      if (typeof options.onSubmit === "function") {
+      if (typeof _this.onSubmit === "function") {
         var formData = form.querySelectorAll("[name]");
         var formValue = Array.from(formData).reduce(function (values, input) {
           switch (input.type) {
             case "file":
-              getParent(input, options.inputSelector).querySelector(
-                options.customElements
+              getParent(input, _this.inputSelector).querySelector(
+                _this.customElements
               ).innerHTML = "Your file is here !";
               values[input.name] = input.files;
               break;
@@ -146,7 +150,7 @@ function validator(formSelector, options = {}) {
           }
           return values;
         }, {});
-        options.onSubmit(formValue);
+        _this.onSubmit(formValue);
       } // submit with default event
       else {
         form.submit();

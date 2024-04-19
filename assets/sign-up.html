@@ -124,11 +124,10 @@
     <script>
       // when buidling a library out of scratch
       // remember to have desire / hope / results for it
-      validator('#form-1',{
-        onSubmit : function(data){
-          console.log(data)
-        }
-      })
+      var form = new validator('#form-1');
+      // form.onSubmit = function(formData){
+      //   console.log(formData)
+      // }
     </script>
   </body>
 </html>
